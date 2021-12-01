@@ -1,0 +1,59 @@
+.faq {
+  padding: 80px 0 60px;
+
+  @include phones{
+    padding: 25px 0 25px;
+  }
+}
+
+.faq>.container {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 729px;
+    height: 729px;
+    background: $orange;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1000px $orange;
+    filter: blur(67px);
+    opacity: 0.11;
+    top: 97px;
+    left: -606px;
+    z-index: -1;
+
+    @include phones {
+      top: 240px;
+      left: -56px;
+      transform: scale(0.5);
+    }
+
+  }
+}
+
+.faq__title {
+  margin-bottom: 65px;
+  transform: translate(0px, 150%);
+  opacity: 0;
+  transition: all .8s ease 0s;
+
+  @include tablets {
+    margin-bottom: 5px;
+  }
+}
+.faq__title._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.faq__list {
+
+  transform: translate(0px, 40%);
+  opacity: 0;
+  transition: all .8s ease 0s;
+}
+.faq__list._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}

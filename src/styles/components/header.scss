@@ -1,0 +1,22 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: $z-index-menu-header;
+  padding: 50px 0 40px;
+  transition: background 0.8s ease;
+
+  @include tablets {
+    padding: 20px 0;
+  }
+
+  & .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.header._active {
+  background-color: $black;
+}

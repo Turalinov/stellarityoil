@@ -1,0 +1,151 @@
+
+.hero {
+  padding: 190px 0 50px;
+
+  @include tablets {
+    padding: 120px 0 50px;
+  }
+
+  @include phones {
+    padding: 311px 0 20px;
+  }
+}
+
+.hero > .container {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 605px;
+    height: 605px;
+    background: $orange;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1000px $orange;
+    filter: blur(67px);
+    opacity: 0.25;
+    top: -180px;
+    left: -180px;
+    z-index: -1;
+
+    @include phones {
+      top: -345px;
+      left: -237px;
+      transform: scale(0.5);
+    }
+
+  }
+
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 729px;
+      height: 729px;
+      background: $orange;
+      border-radius: 50%;
+      box-shadow: 0px 0px 1000px $orange;
+      filter: blur(67px);
+      opacity: 0.11;
+      top: 137px;
+      left: 963px;
+      z-index: -1;
+
+      @include phones {
+        top: 274px;
+        left: -30px;
+        transform: scale(0.5);
+      }
+
+    }
+}
+
+.hero__title {
+  margin-bottom: 13px;
+
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all .8s ease 0s;
+
+  @include tablets {
+    margin-bottom: 16px;
+  }
+}
+
+.hero__title._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.hero__desc {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 503px;
+  margin-bottom: 55px;
+
+  transform: translate(0px, 150%);
+  opacity: 0;
+  transition: all .8s ease 0s;
+
+  @include tablets {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  @include phones {
+    font-size: 12px;
+  }
+}
+
+.hero__desc._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all .8s ease 0.4s;
+}
+
+.hero__btn {
+  background: #000;
+  width: 248px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transform: translate(0px, 150%);
+  opacity: 0;
+  transition: all .8s ease 0.8s;
+
+  @include phones {
+    // width: 100%;
+  }
+}
+
+.hero__btn._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.hero__img {
+  position: absolute;
+  left: calc(50% + 150px);
+  top: -60px;
+  width: 480px;
+  height: 490px;
+  transform: scale(1.5);
+  // background-image: url("images/oil.png");
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: contain;
+
+  @include tablets {
+    transform: scale(1);
+    left: calc(50% - 6px);
+    top: -100px;
+  }
+
+  @include phones {
+    transform: scale(0.7);
+    left: calc(50% - 246px);
+    top: -390px;
+  }
+}

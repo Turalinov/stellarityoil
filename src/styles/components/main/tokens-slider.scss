@@ -1,0 +1,40 @@
+.tokens-slider {
+  // overflow: initial;
+  position: relative;
+  transform: translate(0px, 10%);
+  opacity: 0;
+  transition: all .8s ease 0s;
+}
+
+.tokens-slider._active {
+
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.tokens-slider__wrapper {}
+
+.tokens-slider__slide {
+  // width: 133px !important;
+  // height: 61px;
+
+  @include phones {
+    // width: 101px !important;
+    // height: 46px;
+  }
+
+  // transition: transform 1s ease;
+
+  &:hover {
+    // transform: scale(1.1);
+    // z-index: 1;
+    // box-shadow: 0px 9px 30px rgba(124, 136, 190, 0.1);
+  }
+}
+
+.tokens-slider__content {
+  // display: flex;
+  // align-items: center;
+}
+
+.tokens-slider__img {}
