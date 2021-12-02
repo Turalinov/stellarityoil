@@ -16,19 +16,23 @@
 
 
   const menuLinks = document.querySelectorAll('.menu__link');
-
+  const header = document.querySelector('.header');
   menuLinks.forEach((menuLink) => {
     menuLink.addEventListener('click', (e) => {
       e.preventDefault();
 
-      let blockId = menuLink.getAttribute('href')
-      if (blockId != "#") {
-        document.querySelector(blockId).scrollIntoView({
-          behavior: 'smooth',
-        })
-      }
+      const blockId = menuLink.getAttribute('href');
+      const element = document.querySelector(blockId);
+      const offset = header.clientHeight;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementReact = element.getBoundingClientRect().top;
+      const elementPosition = elementReact - bodyRect;
+      const offsetPositon = elementPosition - offset;
 
-
+      window.scrollTo({
+        top: offsetPositon,
+        behavior: 'smooth',
+      })
 
       if (menu.classList.contains('menu--opened')) {
             menu.classList.remove('menu--opened')
