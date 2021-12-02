@@ -75,6 +75,10 @@ task('php-mailer', () => {
   return src([`${SRC_PATH}/PHPMailer/*/**`])
     .pipe(dest(`${DIST_PATH}/PHPMailer/`))
 })
+task('toml', () => {
+  return src([`${SRC_PATH}/.well-known/*.toml`])
+    .pipe(dest(`${DIST_PATH}/.well-known/`))
+})
 
 
 task('icons', () => {
@@ -146,15 +150,17 @@ task('watch', () => {
   watch(`./${SRC_PATH}/images/icons/*.svg`, series('icons'))
   watch(`./${SRC_PATH}/json/*.json`, series('json'))
   watch(`./${SRC_PATH}/*.php`, series('php'))
+  watch(`./${SRC_PATH}/.well-known/*.toml`, series('toml'))
   watch(`./${SRC_PATH}/libs/*.js`, series('libs'))
   watch([`./${SRC_PATH}/images/*.png`, `./${SRC_PATH}/images/*.svg`], series('images'))
   watch([`./${SRC_PATH}/fonts/*.woff`, `./${SRC_PATH}/fonts/*.woff2`], series('fonts'))
+  watch(`${SRC_PATH}/*.ico`, series('favicon'))
 })
 
 task('default',
   series(
     "clean",
-    parallel("copy:html", "styles", "scripts", "icons", "favicon", "images", "json", "php", "libs", "php-mailer", "fonts"),
+    parallel("copy:html", "styles", "scripts", "icons", "favicon", "toml", "images", "json", "php", "libs", "php-mailer", "fonts"),
     parallel("watch", "server")
   )
 )
@@ -163,6 +169,6 @@ task('default',
 task("build",
   series(
     "clean",
-    parallel("copy:html", "styles", "scripts", "icons", "favicon", "images", "json", "php", "libs", "php-mailer", "fonts")
+    parallel("copy:html", "styles", "scripts", "icons", "favicon", "toml", "images", "json", "php", "libs", "php-mailer", "fonts")
   )
 )

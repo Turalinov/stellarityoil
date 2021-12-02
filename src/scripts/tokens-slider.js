@@ -136,7 +136,7 @@ new Swiper('.tokens-slider', {
   //дополнительно к fade
   fadeEffect: {
     //параллельная смена прозрачности
-    // crossFade: true
+    crossFade: true
   },
 
     //эффекты переключения слайдов

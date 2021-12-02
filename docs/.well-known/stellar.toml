@@ -1,0 +1,26 @@
+NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
+
+ACCOUNTS=[
+"GANAEQJ5X22UY2PNGS2GPOQQ2OYRBLITGXOOTZENGKRVVFOCGR2QPTI7"
+]
+VERSION="2.2.1"
+
+[DOCUMENTATION]
+ORG_NAME="StellarityOil"
+ORG_URL="https://www.stellarityoil.com"
+ORG_DESCRIPTION="StellarityOil is a special project that coordinates putting resources into oil with putting resources into crypto. Oil is one of the most hotly debated assets on the market, and as the global demand for energy, plastics and other petroleum products continues to surge, so too will demand for this commodity, which is in limited supply."
+ORG_TWITTER="@Stellarity"
+ORG_LOGO="https://www.stellarityoil.org/images/logo.png"
+ORG_OFFICIAL_EMAIL="oilsupply8@gmail.com"
+
+
+[[CURRENCIES]]
+code="OILT"
+issuer="GANAEQJ5X22UY2PNGS2GPOQQ2OYRBLITGXOOTZENGKRVVFOCGR2QPTI7"
+anchor_asset="false"
+name="CrudeOil"
+desc="CrudeOil provide an opportunity to invest in both the oil market and cryptocurrency. OILT tokens shall be available for purchase in all its phases. Each OILT token represents an oil contract, where StellarityOil commits to repurchase it in exchange for 1 gallon of Giddings crude oil, or its equivalent market price, at a maturity date."
+image="https://www.stellarityoil.org/images/token_logo.png"
+fixed_number=10000000
+max_number=10000000
+is_unlimited=false

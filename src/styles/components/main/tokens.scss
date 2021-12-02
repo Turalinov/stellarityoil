@@ -207,6 +207,20 @@
   }
 }
 
+.tokens__pic--seconds {
+  background: linear-gradient(164.4deg, #FF9763 5.15%, #E55812 76.4%);
+}
+
+.tokens__pic--seconds .tokens__img {
+  width: 198px;
+  height: 218px;
+
+  @include phones {
+    width: calc(198px / 2);
+    height: calc(218px / 2);
+  }
+}
+
 .tokens__img {
   width: 155px;
   height: 234px;
